@@ -10,5 +10,5 @@
   { "id": "leitourgikal", "name": "Operating Systems(Lab)", "photo": "/photos/linuxmint.jpg", "Semester": "1st", "created": "2023", "description": "Operating Systems(Lab)" },
   { "id": "praktiki", "name": "Getting into Specialty Training", "photo": "/photos/inkscape.jpg", "Semester": "1st", "created": "2023", "description": "Getting into Specialty Training" },
   { "id": "C++Th", "name": "Data Structures and Algorithms in C++(Theory)", "photo": "https://raw.githubusercontent.com/moujahentin/moujahentin/main/photos/C%2B%2BTh.jpeg", "Semester": "2nd", "created": "2024", "description": "Data Structures and Algorithms in C++(Theory)" },
-{ "id": "C++l", "name": "Data Structures and Algorithms in C++(Lab)", "photo": "/photos/C++l.jpg", "Semester": "2nd", "created": "2024", "description": "Data Structures and Algorithms in C++(Lab)" }
+{ "id": "C++l", "name": "Data Structures and Algorithms in C++(Lab)", "photo": "https://raw.githubusercontent.com/moujahentin/moujahentin/main/photos/C%2B%2Bl.jpg", "Semester": "2nd", "created": "2024", "description": "Data Structures and Algorithms in C++(Lab)" }
 ]
