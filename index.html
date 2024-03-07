@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moujahentin's Warehouse</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    
+    <div class="hero">
+     <h1>Hello, world!</h1>
+     <h2>This is my learning journey so far...</h2> 
+    </div>
+   
+    <div class="filter-nav">
+      <a href="#" data-filter="all">All Semesters</a>
+      <a href="#" data-filter="1st">1st <span class="only-large-screen">Semester</span></a>
+      <a href="#" data-filter="2nd">2nd <span class="only-large-screen">Semester</span></a>
+      <a href="#" data-filter="3rd">3rd <span class="only-large-screen">Semester</span></a>
+      <a href="#" data-filter="4th">4th <span class="only-large-screen">Semester</span></a>
+     </div>
+     
+     <div class="semesters"></div> 
+
+     <template id="lessons-card">
+        <div class="lessons-card">
+         <div class="lessons-card-text">
+           <h3></h3>
+           <small><span class="Semester">1st Semester</span> - <span class="age">2023</span></small>
+           <p class="description">Introduction to Computer Science(Theory part)</p>
+           <a href="#" class="primary-btn"><span class="name"></span> files</a>
+         </div>
+         <div class="lessons-card-photo">
+           <img src="https://media.wiley.com/product_data/coverImage300/23/04711377/0471137723.jpg" alt="CS theory book">
+         </div>
+       </div>
+     </template>
+    
+  </body>
+</html>
