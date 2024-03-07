@@ -6,7 +6,7 @@ const wrapper = document.createElement("div")
 
 function decideAgeText(age){
 if(!age){
-  return "Less than a yeah old"
+  return "Less than a year old(kala pou to eide o filippos)"
 }
 
 return age> 1 ? `${age} years old` : "1 year old"
