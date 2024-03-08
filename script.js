@@ -27,7 +27,7 @@ sems.forEach(sem => {
   clone.querySelector(".Semester").textContent = sem.Semester
   clone.querySelector(".description").textContent = sem.description
   clone.querySelector(".name").textContent = sem.name
-  clone.querySelector(".primary-btn").href = `manilas/${sem.id}/`
+  clone.querySelector(".primary-btn").href = `https://github.com/moujahentin/moujahentin/tree/6bed086eefd1f502046fa75c4089e380b269970e/manilas/${sem.id}/`
  
   wrapper.appendChild(clone)
   })  
