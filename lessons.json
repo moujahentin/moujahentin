@@ -18,7 +18,7 @@
   { "id": "databasesLab", "name": "Databases(Lab)", "photo": "images/databasesLab.png", "Semester": "2nd", "created": "2024", "description": "Databases(Lab)" },
   { "id": "gimp", "name": "Image Editing(GIMP)", "photo": "images/GIMP.jpg", "Semester": "2nd", "created": "2024", "description": "Image editing" },
   { "id": "sql", "name": "DatabasesII", "photo": "images/databasesii.png", "Semester": "3rd", "created": "2024", "description": "Databases II(Lab)" },
-  { "id": "openGL", "name": "OpenGL", "photo": "images/openGL.png", "Semester": "3rd", "created": "2024", "description": "OpenGL" },
+  { "id": "opengl", "name": "OpenGL", "photo": "images/openGL.png", "Semester": "3rd", "created": "2024", "description": "OpenGL" },
   { "id": "php", "name": "PHP", "photo": "images/php.png", "Semester": "3rd", "created": "2024", "description": "PHP" },
   { "id": "c++Java", "name": "Object Oriented Programming in C++/Java", "photo": "images/c++Java.png", "Semester": "3rd", "created": "2024", "description": "Object Oriented Programming in C++/Java" },
   { "id": "blender", "name": "3D Graphic Design Tools(Blender)", "photo": "images/blender.png", "Semester": "3rd", "created": "2024", "description": "3D Graphic Design Tools(Blender)" },
