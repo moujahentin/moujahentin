@@ -1,0 +1,22 @@
+.test{
+    font-size: 35px;
+    border: solid 10px;
+    width: 150px;   
+    height: 150px; 
+    text-align: center;
+    border-top-color: blue;
+    border-left-color: green;
+    border-right-color: red;
+    border-bottom-color: yellow;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    transition: 0.4s;
+        
+}
+.test:hover{
+    transform: rotate(360deg);
+    width: 500px;
+    height: 500px;
+    font-size: 100px;
+
+}

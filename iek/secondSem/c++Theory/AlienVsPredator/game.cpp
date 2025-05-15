@@ -1,0 +1,101 @@
+#include "Alien.h"
+#include "Predator.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+// Function to generate a random number between min and max (inclusive)
+int random(int min, int max) {
+    return min + rand() % (max - min + 1);
+}
+
+// Function to simulate a battle round
+void battleRound(Alien& player, Predator* predators, int numPredators) {
+    // Player's turn
+    cout << "Player's turn:" << endl;
+    cout << "1. Attack" << endl;
+    cout << "2. Defend" << endl;
+    int choice;
+    cout << "Choose action: ";
+    cin >> choice;
+    switch (choice) {
+        case 1: // Attack
+            for (int i = 0; i < numPredators; ++i) {
+                int damage = random(5, 15); // Random damage between 5 and 15
+                predators[i].setEyes(predators[i].getEyes() - damage);
+                cout << "Player attacked Predator " << (i + 1) << " for " << damage << " damage!" << endl;
+            }
+            break;
+        case 2: // Defend
+            // Increase player's defense temporarily
+            player.setEyes(player.getEyes() + 5);
+            cout << "Player is defending! Defense increased." << endl;
+            break;
+        default:
+            cout << "Invalid choice. Player skipped the turn." << endl;
+    }
+    
+    // Predators' turn
+    cout << "Predators' turn:" << endl;
+    for (int i = 0; i < numPredators; ++i) {
+        int predChoice = random(1, 2); // Random choice between 1 and 2
+        switch (predChoice) {
+            case 1: // Attack
+                int damage = random(3, 10); // Random damage between 3 and 10
+                player.setEyes(player.getEyes() - damage);
+                cout << "Predator " << (i + 1) << " attacked Player for " << damage << " damage!" << endl;
+                break;
+            case 2: // Defend
+                // Increase Predator's defense temporarily
+                predators[i].setEyes(predators[i].getEyes() + 3);
+                cout << "Predator " << (i + 1) << " is defending! Defense increased." << endl;
+                break;
+        }
+    }
+}
+
+int main() {
+    srand(time(nullptr)); // Seed the random number generator
+    
+    Alien player("Player", 100); // Initialize the player Alien with 100 health
+    int numPredators = 3; // Number of Predators
+    Predator predators[numPredators]; // Array to store Predators
+    
+    // Generate Predators at random positions with random health
+    for (int i = 0; i < numPredators; ++i) {
+        predators[i] = Predator("Predator", random(50, 100), "Claws", "Stealth", random(10, 20));
+    }
+    
+    // Game loop
+    while (player.getEyes() > 0 && numPredators > 0) {
+        cout << "Player's health: " << player.getEyes() << endl;
+        cout << "Number of Predators remaining: " << numPredators << endl;
+        cout << "---------------------------" << endl;
+        
+        // Perform a battle round
+        battleRound(player, predators, numPredators);
+        
+        // Check if any Predator has been defeated
+        for (int i = 0; i < numPredators; ++i) {
+            if (predators[i].getEyes() <= 0) {
+                cout << "Predator " << (i + 1) << " has been defeated!" << endl;
+                // Replace the defeated Predator with the last one
+                predators[i] = predators[numPredators - 1];
+                numPredators--; // Reduce the count of Predators
+            }
+        }
+        
+        cout << endl;
+    }
+    
+    // Check if the player won or lost
+    if (player.getEyes() <= 0) {
+        cout << "You were defeated by the Predators! Game over." << endl;
+    } else {
+        cout << "Congratulations! You defeated all the Predators. You win!" << endl;
+    }
+    
+    return 0;
+}

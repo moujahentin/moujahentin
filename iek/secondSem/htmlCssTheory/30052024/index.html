@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <h1 align="center">ΦΟΡΜΑ ΠΑΡΑΓΕΛΙΩΝ</h1>
+    <br><br>
+    (Τα πεδία με * πρέπει να συμληρωθούν υποχρεωτικά)
+    <br><br>
+    <body bgcolor="#d3d3d3">
+        <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="fname"><b>Όνομα*:</b></label>
+                </td>
+                <td>
+                    <input  name="fname" size="30" maxlength="30" id="fname" type="text" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lname"><b>Επώνυμο*:</b></label>
+                </td>
+                <td>
+                    <input  name="lname" size="30" maxlength="30"  id="lname" type="text" required>
+                </td>
+            </tr>
+        </table>
+                    <label for="country"><b>Χώρα:</b></label>
+    
+                    <select name="country" size="" id="country">
+                        <option value="GR" selected="selected">Greece</option>
+                        <option value="FR">France</option>
+                        <option value="ES">Spain</option>
+                        <option value="IT">Italy</option>
+                        <option value="GE">Germany</option>
+                    </select>
+        <br><br>
+                    <label for="nomos"><b>Νομός:</b></label>
+               
+                    <select name="nomos" size="3" id="nomos">
+                        <option value="GR" selected="selected">Greece</option>
+                        <option value="FR">France</option>
+                        <option value="ES">Spain</option>
+                        <option value="IT">Italy</option>
+                        <option value="GE">Germany</option>
+                    </select>
+                    <br><br>
+        <table>
+            <tr>
+                <td>
+                    <label for="odos"><b>Οδός*:</b></label>
+                </td>
+                <td>
+                    <input  name="odos" size="30" maxlength="30"  id="odos" type="text" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="number"><b>Αριθμός*:</b></label>
+                </td>
+                <td>
+                    <input  name="number" size="5"  maxlength="5"  id="number" type="number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tk"><b>Τ.Κ.*:</b></label>
+                </td>
+                <td>
+                    <input  name="tk" size="5" maxlength="5" id="tk" type="number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tel"><b>Τηλέφωνο*:</b></label>
+                </td>
+                <td>
+                    <input  name="tel" size="10" maxlength="10" id="tel" type="number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mail"><b>Email*:</b></label>
+                </td>
+                <td>
+                    <input  name="mail" size="30" id="mail" type="email" required>
+                </td>
+            </tr>
+        </table>
+                <label for="pay"><b>Τρόπος Πληρωμής*:</b></label>
+                    <input type="radio" name="pay" id="antik" checked>
+                    <label for="antik">Αντικαταβολή</label>
+                    <input type="radio" name="pay" id="cash">
+                    <label for="cash">Κατάθεση σε Τράπεζα</label>
+                    <input type="radio" name="pay" id="paypal">
+                    <label for="paypal">Paypal</label>
+                    <br><br>
+                <label for="parat"><b>Παρατηρήσεις:</b></label>
+                <br>
+                    <textarea name="parat" id="parat" cols="70" rows="3"></textarea>
+                <br><br>
+                <label for="rate"><b>Βαθμολογήστε στη φόρμα:</b>0</label>
+                <input type="range" name="rate" min="0" max="10" step="1">10
+                <br><br>
+                <input name="submit" value="Αποστολή" type="submit">
+        </form>
+
+
+    </body>
+</html>

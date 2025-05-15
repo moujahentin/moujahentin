@@ -1,0 +1,6 @@
+pente
+5
+tessera
+4
+tria
+3

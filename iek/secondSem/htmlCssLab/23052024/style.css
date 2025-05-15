@@ -1,0 +1,124 @@
+/* style.css */
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 147, 75);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+@keyframes top {
+    from { 
+        background-color: rgb(255, 204, 62); 
+        color: rgb(3, 154, 255);
+    }
+    to { 
+        background-color: rgb(209, 131, 14); 
+        color: rgb(25, 0, 250);
+    }  
+}
+
+@keyframes toph1 {
+    0% { left: 0; top: 0; }
+    25% { left: 75%; top: 60%; }
+    50% { left: 0; top: 60%; }
+    75% { left: 75%; top: 0; }
+    100% { left: 0; top: 0; }
+}
+@keyframes car {
+    0% { left: 0; top: 20%; }
+    10%{left: 75%; top: 20%;}
+    20%{left: 0; top: 20%;}
+    30% { left: 75%; top: 60%; }
+    40%{left: 0; top: 20%;}
+    50% { left: 0; top: 60%; }
+    60%{left: 0; top: 20%;}
+    70% { left: 75%; top: 20%; }
+    80%{left: 0; top: 20%;}
+    90%{left: 75%; top: 20%;}    
+    100% { left: 0; top: 20%; }
+}
+@keyframes car2 {
+    0% { left: 75%; top: 20%; }
+    10%{left: 0; top: 20%;}
+    20%{left: 75%; top: 20%;}
+    30% { left: 75%; top: 60%; }
+    40%{left: 75%; top: 20%;}
+    50% { left: 0; top: 60%; }
+    60%{left: 75%; top: 20%;}
+    70% { left: 0; top: 20%; }
+    80%{left: 75%; top: 20%;}
+    90%{left: 0; top: 20%;}    
+    100% { left: 75%; top: 20%; }
+}
+.car:hover{
+    animation-play-state: paused;
+}
+.car:hover img{
+    transform: rotate(40deg) scale(1.4);
+    
+    
+  }
+  .car2:hover{
+    animation-play-state: paused;
+}
+.car2:hover img{
+    transform: rotate(40deg) scale(1.4);
+    
+    
+  }
+.toph1:hover {
+    transform: rotate(180deg) scale(1.4);
+    animation-play-state: paused;
+}
+.top:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to left, rgb(255, 204, 62), rgb(209, 131, 14));
+}
+
+.top {
+    color: rgb(3, 154, 255);
+    padding: 50px 30px;
+    position: relative;
+    margin-bottom: 15px;
+    animation: top 1s infinite alternate;
+}
+
+.top::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right, rgb(255, 204, 62), rgb(209, 131, 14));
+}
+
+p {
+    text-align: center;
+}
+
+.toph1 {
+    animation: toph1 6s infinite;
+    position: absolute;
+    margin: 0;
+}
+.car{
+    animation: car 6s infinite;
+    position: absolute;
+    margin: 0;
+
+}
+.car2{
+    animation: car2 6s infinite;
+    position: absolute;
+    margin: 0;
+
+}

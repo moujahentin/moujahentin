@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Μάνος Δημήτρης</title>
+        <meta charset="UTF-8">
+    </head>
+    <body bgcolor="#d3d3d3">
+        <h1 align="center">Εισαγωγη Παιχνιδιών</h1>
+        <form action="insert_data.php" method="post">
+            <table align="center">
+                <tr>
+                    <td>
+                        <label for="name"><b>Όνομα Παιχνιδιού :</b></label>
+                    </td>
+                    <td>
+                        <input  name="name" size="30" maxlength="30" id="name" type="text" >
+                    </td>
+                    <td rowspan="4"><center><input  name="submit" value="Αποστολή" type="submit">
+                        <br><input type="reset" value="Reset"></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="publisher"><b>Εκδότης :</b></label>
+                    </td>
+                    <td>
+                        <input  name="publisher" size="30" maxlength="30"  id="publisher" type="text" >
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label for="year"><b>Ημερομηνία έκδοσης :</b></label>
+                    </td>
+                    <td>
+                        <input  name="year" size="30" maxlength="30"  id="year" type="date" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="multiplayer"><b>Multiplayer :</b></label>
+                    </td>
+                    <td>
+                        <input  name="multiplayer" size="30" maxlength="30"  id="multiplayer" type="checkbox" >
+                    </td>
+                </tr>
+               
+            </table>
+
+            </form>
+            <br><br>
+            <center><a href="index.html"><button>Επιστροφή στην Αρχική</button></a></center>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+@ECHO OFF
+CLS
+SETLOCAL ENABLEDELAYEDEXPANSION
+TITLE Propaidia 1 eos 10
+SET /A RESULT =1
+FOR /L %%Y IN (1,1,10) DO (
+        SET /A RESULT = 2 * %RESULT%
+	ECHO 2  %RESULT%
+							
+							)
+PAUSE
+EXIT
+

@@ -1,0 +1,53 @@
+@ECHO OFF
+TITLE NETWORK SCANNER
+SETLOCAL
+
+CALL:ADDRESS
+
+:ADDRESS
+   CLS
+   ECHO Eisagete mia diefthinsi diktiou gia elegho
+   SET /P Address=
+   IF "%Address%"=="" GOTO:ADDRESS  ELSE GOTO:MENU
+
+:MENU
+CLS
+ECHO 1 Ping %Address%
+ECHO 2 Tracert %Address%
+ECHO 3 Nslookup %Address%
+ECHO 4 Exit
+ECHO Epilexte ena programma (1,2,3) 4 EXODOS
+SET /P EPILOGI=
+IF "%EPILOGI%"=="" GOTO:MENU
+IF %EPILOGI% LSS 1 GOTO:MENU
+IF %EPILOGI% GEQ 5 GOTO:MENU
+IF %EPILOGI% EQU 1 GOTO:FIRST 
+IF %EPILOGI% EQU 2 GOTO:SECOND 
+IF %EPILOGI% EQU 3 GOTO:THIRD 
+IF %EPILOGI% EQU 4 GOTO:FOURTH 
+   
+:FIRST
+CLS
+Ping %Address%
+PAUSE
+CALL:MENU
+
+:SECOND
+CLS
+Tracert %Address%
+PAUSE
+CALL:MENU
+
+:THIRD
+CLS
+Nslookup %Address%
+PAUSE
+CALL:MENU
+
+:FOURTH
+CLS
+ECHO BYE BYE
+EXIT
+
+ENDLOCAL
+

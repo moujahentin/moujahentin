@@ -1,0 +1,36 @@
+html{
+    background-color: rgb(34, 34, 34); 
+}
+.d1{
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+}
+.d2{
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+}
+@keyframes hearts{   
+    0% {transform: scale(0.8);}
+    20% {transform: scale(1.2); }
+    40% {transform: scale(1); }
+}
+@keyframes heartsbeat{   
+    
+    20% (transform: scale(0.8); )
+    40% {transform: scale(1.2); }
+    60% {transform: scale(2); }
+    100%{opacity: 0;}
+}
+.hearts{
+    width: 100px;
+    animation: hearts 2s infinite ;
+    animation-delay: 1s;
+}
+
+.heartsbeat{
+    width: 100px;
+    animation: heartsbeat  2s infinite ;
+    animation-delay: 1s;
+}

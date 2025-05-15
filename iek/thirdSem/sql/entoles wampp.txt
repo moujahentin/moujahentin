@@ -1,0 +1,358 @@
+1.
+
+CREATE DATABASE customers;
+
+2.
+
+CREATE TABLE people (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255) NOT NULL, 
+    Age int,
+    City varchar (255),
+    PRIMARY KEY (ID)
+);
+
+
+3.
+
+CREATE TABLE orders(
+	OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID)
+);
+
+4.
+
+INSERT INTO people (ID,LastName, FirstName, City, Age)
+VALUES (1000, 'Papadopoulos', 'Georgios', 'Thessaloniki', 40);
+INSERT INTO people (ID,LastName, FirstName, City, Age)
+VALUES (1001, 'Patakos', 'Stylianos', 'Athina', 41);
+INSERT INTO people (ID,LastName, FirstName, City, Age)
+VALUES (1002, 'Makarezos', 'Nikolaos', 'Drama', 35);
+INSERT INTO people (ID,LastName, FirstName, City, Age)
+VALUES (1003, 'Papariga', 'Aleka', 'Athina', 60);
+INSERT INTO people (ID,LastName, FirstName, City, Age)
+VALUES (1004, 'Papadopoulou', 'Xristina', 'Serres', 30);
+
+5.
+
+INSERT INTO orders (OrderID,OrderNumber, PersonID)
+VALUES (5000,54000,1000);
+INSERT INTO orders (OrderID,OrderNumber, PersonID)
+VALUES (5001,54001,1001);
+INSERT INTO orders (OrderID,OrderNumber, PersonID)
+VALUES (5002,54002,1002);
+INSERT INTO orders (OrderID,OrderNumber, PersonID)
+VALUES (5003,54003,1003);
+INSERT INTO orders (OrderID,OrderNumber, PersonID)
+VALUES (5004,54004,1004);
+
+
+6.
+
+SELECT * FROM people
+WHERE FirstName LIKE 'A%';
+
+7.
+
+SELECT * FROM people
+WHERE FirstName LIKE '%s';
+
+8.
+
+SELECT * FROM people 
+WHERE LastName LIKE '%ta%'; 
+
+9.
+
+SELECT * FROM people 
+WHERE LastName LIKE '_a%'; 
+
+10.
+
+SELECT * FROM people 
+WHERE LastName LIKE '%k__'; 
+
+11.
+
+SELECT * FROM people 
+WHERE FirstName LIKE 'x%a'; 
+
+12.
+
+SELECT * FROM `people` 
+WHERE Age BETWEEN 30 and 45; 
+
+13.
+
+SELECT * FROM `orders` 
+WHERE OrderNumber BETWEEN 54002 and 54005; 
+
+14.
+
+SELECT MIN(Age) AS min_age
+FROM people;
+
+15.
+
+SELECT MAX(Age) AS max_age
+FROM people;
+
+16.
+
+SELECT COUNT(OrderID) 
+FROM orders;
+
+17.
+
+SELECT COUNT(OrderID) AS plithos_paraggelion
+FROM orders; 
+
+18.
+
+SELECT avg(Age) FROM people; 
+
+19.
+
+SELECT avg(Age)as moilikias FROM people;
+
+20.
+
+SELECT SUM(OrderID) AS synolo
+FROM orders;SELECT COUNT(ProductID)
+FROM Products; 
+
+21.
+
+SELECT * FROM people WHERE City = 'Thessaloniki'; 
+
+22.
+
+SELECT * FROM people WHERE Age <> 40; 
+
+23.
+
+SELECT * FROM `people`
+WHERE city in ('Thessaloniki','Athina','Drama');
+
+
+24.
+
+SELECT * FROM `people`
+WHERE city not in ('Thessaloniki','Athina','Drama');
+
+
+25.
+
+SELECT * FROM people
+ORDER BY City ASC; 
+
+26.
+
+SELECT * FROM people
+ORDER BY Age DESC; 
+
+27.
+
+CREATE TABLE products (
+    ProductID int NOT NULL,
+    ProductNumber int NOT NULL,
+    PeopleId int NOT NULL,
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (PeopleID) REFERENCES people(ID)
+); 
+
+28.
+
+INSERT INTO products(PeopleId,ProductID,ProductNumber)
+VALUES(1000,75000,5204200);
+INSERT INTO products(PeopleId,ProductID,ProductNumber)
+VALUES(1001,75001,5204300);
+INSERT INTO products(PeopleId,ProductID,ProductNumber)
+VALUES(1002,75002,5204400);
+INSERT INTO products(PeopleId,ProductID,ProductNumber)
+VALUES(1003,75003,5204500);
+INSERT INTO products(PeopleId,ProductID,ProductNumber)
+VALUES(1004,75004,5204600);
+
+29.
+
+ALTER TABLE people
+ADD Email varchar(255);
+
+30.
+
+ALTER TABLE people
+ADD Email varchar(255);
+
+31.
+
+ALTER TABLE people
+DROP COLUMN Email;
+
+32.
+
+UPDATE people
+SET Age=45
+WHERE ID = 1002;
+
+33.
+
+SELECT COUNT(ProductID) AS CountID
+FROM products;
+
+34.
+
+SELECT AVG(Age) as averageAge
+FROM people;
+
+35.
+
+SELECT MIN(ID) AS minID
+FROM people;
+
+36.
+
+SELECT MAX(ID) AS maxID
+FROM people;
+
+37.
+
+ALTER TABLE products
+ADD Price int;
+
+38.
+
+UPDATE products
+SET Price=20
+WHERE ProductID = 75000;
+UPDATE products
+SET Price=40
+WHERE ProductID = 75001;
+UPDATE products
+SET Price=60
+WHERE ProductID = 75002;
+UPDATE products
+SET Price=80
+WHERE ProductID = 75003;
+UPDATE products
+SET Price=100
+WHERE ProductID = 75004;
+
+39.
+
+SELECT SUM(Price) AS priceSum
+FROM products; 
+
+40.
+
+SELECT * FROM products
+ORDER BY price DESC; 
+
+41.
+
+SELECT orders.OrderID, people.LastName, people.FirstName, people.ID
+FROM orders
+INNER JOIN people ON orders.PersonID = people.ID;
+
+42.
+
+SELECT orders.OrderID, people.LastName, people.FirstName, people.ID, products.ProductNumber
+FROM ((orders
+INNER JOIN people ON orders.PersonID = people.ID)
+INNER JOIN products ON orders.PersonID = products.PeopleId);
+
+43.
+
+SELECT orders.OrderID, people.LastName, people.FirstName
+FROM people
+LEFT JOIN orders ON people.ID=orders.PersonID
+ORDER BY people.LastName;
+
+44.
+
+SELECT people.ID, people.LastName,people.FirstName,products.ProductID
+FROM people
+RIGHT JOIN products ON people.ID = products.PeopleId
+ORDER BY people.ID; 
+
+45.
+
+SELECT orders.PersonID, people.LastName, people.FirstName,products.ProductID
+FROM ((orders
+INNER JOIN people ON orders.PersonID = people.ID)
+INNER JOIN products ON orders.PersonID = products.PeopleId); 
+
+46.
+
+SELECT *
+FROM orders
+CROSS JOIN people; 
+
+47.
+
+SELECT *
+FROM ((orders
+CROSS JOIN people) 
+CROSS JOIN products); 
+
+48.
+
+CREATE TABLE orders32(
+	OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID)
+);
+
+49.
+
+INSERT INTO orders32 (OrderID,OrderNumber, PersonID)
+VALUES (5000,54000,1000);
+INSERT INTO orders32 (OrderID,OrderNumber, PersonID)
+VALUES (5001,54001,1001);
+INSERT INTO orders32 (OrderID,OrderNumber, PersonID)
+VALUES (5002,54002,1002);
+INSERT INTO orders32 (OrderID,OrderNumber, PersonID)
+VALUES (5003,54003,1003);
+INSERT INTO orders32 (OrderID,OrderNumber, PersonID)
+VALUES (5004,54004,1004);
+
+50.
+
+DELETE FROM orders32;
+
+51.
+
+DROP TABLE orders32;
+
+52.
+
+ALTER TABLE people
+ADD AFM int(9);
+
+53.
+
+ALTER TABLE people
+DROP COLUMN AFM;
+
+54.
+
+ALTER TABLE people
+ADD AFM int(9);
+
+55.
+
+ALTER TABLE people
+ADD UNIQUE (AFM);
+
+56.
+
+UPDATE people
+SET AFM = 1236456789
+WHERE ID = 1000;
+
+57.
+

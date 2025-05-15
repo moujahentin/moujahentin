@@ -1,0 +1,31 @@
+import tkinter as tk
+from tkinter import PhotoImage
+def calculate_sum():
+	num1=float(entry1.get())
+	num2=float(entry2.get())
+	result.config(text=f"Sum:{num1+num2}")
+def calculate_minus():
+	num1=float(entry1.get())
+	num2=float(entry2.get())
+	result2.config(text=f"Minus:{num1-num2}")
+root =tk.Tk()
+root.geometry("400x300+100+50")
+tk.Label(root, text="Number 1:").pack()
+entry1 = tk.Entry(root)
+entry1.pack()
+tk.Label(root, text="Number 2:").pack()
+entry2 = tk.Entry(root)
+entry2.pack()
+button = tk.Button(root, text="Calculate", command=calculate_sum)
+button.pack()
+result = tk.Label(root, text="Sum: ")
+result.pack()
+button2=tk.Button(root, text="Calculate", command=calculate_minus)
+button2.pack()
+result2=tk.Label(root,text="Minus: ")
+result2.pack()
+image1=PhotoImage(file="athlet.png")
+button3 = tk.Button(root, image=image1)
+button3.pack()
+
+root.mainloop()
