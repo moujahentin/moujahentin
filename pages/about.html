@@ -1,51 +1,145 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moujahentin's Warehouse</title>
-    <link rel="stylesheet" href="../style.css" />
-    <script type="module" src="../script.js"></script>
-  </head>
-  <body>
-    <header>
-      <div id="scrolltop"></div>
-  </header>
-    
-    <div class="hero">
-     <h1>Hello, world!</h1>
-     <h2>This is my learning journey so far...</h2>      
-    </div>
-    <div class="dropdown">  
-      <button class="dropbtn">Menu</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Dimitris Manos</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Font Awesome για icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background-color: rgb(236, 211, 174);
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    h1 {
+      color: rgb(209, 131, 14);
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: rgb(214, 149, 52);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .skills-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-category {
+      flex: 1 1 250px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .skill-category h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: rgb(209, 131, 14);
+    }
+    .skill-category ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .skill-category ul li {
+      display: flex;
+      align-items: center;
+      background: rgb(214, 149, 52);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 5px 5px 0 0;
+      font-size: 0.9rem;
+    }
+    .skill-category ul li i {
+      margin-right: 8px;
+      color: white;
+    }
+    .experience p {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dimitris Manos</h1>
+
+    <p>Hello! I'm Dimitris Manos, a passionate learner and aspiring developer. This website is my personal warehouse where I document my learning journey, projects, and experiences in the world of programming and technology. Feel free to explore and connect with me!</p>
+
+    <p>My skills include HTML, CSS, JavaScript, Python, and more. I'm always eager to learn new technologies and improve my skills. Projects include web development, data analysis, and automation scripts. I enjoy collaborating on open-source projects and contributing to the tech community.</p>
+
+    <h2>Skills & Competencies</h2>
+    <div class="skills-section">
+
+      <div class="skill-category">
+        <h3>Programming / Scripting</h3>
+        <ul>
+          <li><i class="fas fa-code"></i> Python </li>
+          <li><i class="fas fa-terminal"></i> Bash</li>
+          <li><i class="fas fa-code"></i> Java</li>
+          <li><i class="fas fa-code"></i> C</li>
+          <li><i class="fas fa-code"></i> C++</li>
+          <li><i class="fas fa-code"></i> HTML</li>
+          <li><i class="fas fa-code"></i> CSS</li>
+          <li><i class="fas fa-database"></i> PHP / SQL (basic)</li>
+        </ul>
       </div>
-    </div> 
-    <div align="center">
-     <button type="button" class="collapsible">My CV</button>
-    <div class="content">
-      <p><iframe src="../cv/ManosDimitris.pdf" width="100%" height="600px" style="border: none;">
-        Your browser doesn't support PDFs. <a href="ManosDimitris.pdf">Download instead</a>.
-    </iframe></p>
+
+      <div class="skill-category">
+        <h3>Operating Systems</h3>
+        <ul>
+          <li><i class="fab fa-linux"></i> Linux (Ubuntu, Bash, permissions, processes)</li>
+          <li><i class="fas fa-terminal"></i> Custom Linux System (Linux From Scratch)</li>
+          <li><i class="fab fa-windows"></i> Windows 7 / 10</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Networking</h3>
+        <ul>
+          <li><i class="fas fa-network-wired"></i> TCP/IP, ports, basic firewall concepts</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Security</h3>
+        <ul>
+          <li><i class="fas fa-shield-alt"></i> Log analysis</li>
+          <li><i class="fas fa-exclamation-triangle"></i> Incident handling (entry-level)</li>
+          <li><i class="fas fa-user-secret"></i> Security awareness</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li><i class="fas fa-lightbulb"></i> Creativity</li>
+          <li><i class="fas fa-check-circle"></i> Problem Solving</li>
+          <li><i class="fas fa-users"></i> Teamwork</li>
+          <li><i class="fas fa-graduation-cap"></i> Willingness to Learn</li>
+          <li><i class="fas fa-clock"></i> Shift work (24x7 readiness)</li>
+          <li><i class="fas fa-tasks"></i> Following procedures</li>
+          <li><i class="fas fa-chalkboard-teacher"></i> Training new staff</li>
+          <li><i class="fas fa-user-check"></i> Responsibility & incident handling mindset</li>
+        </ul>
+      </div>
+
     </div>
-    <a href="../cv/ManosDimitris.pdf" download>Download My CV in PDF Format</a>
-    <br>
-    <a href="https://www.linkedin.com/in/dimitrios-manos-43884a286/" target="_blank">
-    <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" 
-       alt="LinkedIn" 
-       width="30" 
-       height="30">
-</a>
-    </div> 
-    
-       <p align="center">
-        <a href="#scrolltop"><button class="top">Back to top</button></a>
-      </p>
-  </body>
+  </div>
+</body>
 </html>

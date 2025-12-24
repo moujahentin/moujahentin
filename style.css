@@ -2,6 +2,9 @@ html, body {
   padding: 0;
   margin: 0;
   background-color: rgb(236, 211, 174);
+  height: 100%;        /* Χρειάζεται για να δουλέψει το flex */
+  display: flex;       /* Κάνει το body flex container */
+  flex-direction: column; /* Στήλη, για να είναι πάνω-κάτω τα στοιχεία */
 }
 
 body{
@@ -250,3 +253,25 @@ background: linear-gradient(rgb(247, 185, 93), rgb(245, 162, 38));
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+.content-frame {
+  flex: 1 1 auto; /* Καταλαμβάνει όλο το υπόλοιπο ύψος */
+  width: 100%;
+  border: none;
+}
+header, .hero, nav {
+  flex: 0 0 auto; /* Κρατούν το φυσικό τους ύψος */
+}
+.my-info {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  right: 50%;
+}
+
+
+.audio-container {
+ align-self: center;
+  margin-bottom: 10px;
+}
+

@@ -14,33 +14,34 @@
       <div id="scrolltop"></div>
     </header>
     
-    <div class="hero">
-     <h1>Hello, world!</h1>
-     <h2>This is my learning journey so far...</h2>      
-    </div>
-    <div class="dropdown">  
-      <button class="dropbtn">Menu</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div> 
+   
+    
     <div align="center">
+      <h2>Roadmap.sh projects</h2>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <div id="readme"></div>
+    <div id="readme-roadmap"></div>
     
     <script>
     fetch('https://raw.githubusercontent.com/moujahentin/roadmap.sh/refs/heads/main/README.md')
       .then(response => response.text())
       .then(text => {
-        document.getElementById('readme').innerHTML = marked.parse(text);
+        document.getElementById('readme-roadmap').innerHTML = marked.parse(text);
       });
     </script>
     </div>
-       <p align="center">
-        <a href="#scrolltop"><button class="top">Back to top</button></a>
-      </p>
+       <div align="center">
+      <h2>Personal projects</h2>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <div id="readme-personal"></div>
+    
+    <script>
+    fetch('https://raw.githubusercontent.com/moujahentin/personalProjects/refs/heads/main/README.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('readme-personal').innerHTML = marked.parse(text);
+      });
+    </script>
+    </div>
   </body>
 </html>
+
