@@ -10,8 +10,9 @@
 
   <script>
     const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev";
+const API_KEY = "WIN_TEST_SECRET";
 
-    async function send() {
+async function send() {
   const res = await fetch(ENDPOINT, {
     method: "POST",
     headers: {
@@ -23,9 +24,9 @@
 
   out.textContent = JSON.stringify(await res.json(), null, 2);
 }
-
   </script>
 </body>
 </html>
+
 
 
