@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LLM Page</title>
+</head>
+<body>
+  <textarea id="input"></textarea>
+  <button onclick="sendPrompt()">Send</button>
+  <pre id="response"></pre>
+
+  <script>
+    const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev ";
+
+    async function sendPrompt(){
+      let prompt = document.getElementById("input").value;
+
+      let res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+      });
+
+      let data = await res.json();
+      document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
