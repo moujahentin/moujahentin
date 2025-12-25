@@ -5,28 +5,48 @@
 </head>
 <body>
   <textarea id="input"></textarea>
-  <button onclick="sendPrompt()">Send</button>
+  <button onclick="sendPrompt()">Send</button> <!-- Button now calls sendPrompt() -->
   <pre id="response"></pre>
 
   <script>
-    const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok";
-    async function sendPrompt(){
-      let prompt = document.getElementById("input").value;
+    const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev";
+    const API_KEY = "WIN_TEST_SECRET";
 
-      let res = await fetch(ENDPOINT, {
-        method: "POST",
-        headers:{
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt })
-      });
+    async function sendPrompt() { // Corrected function name
+      const inputElement = document.getElementById('input');
+      const outputElement = document.getElementById('response');
 
-      let data = await res.json();
-      document.getElementById("response").innerText = JSON.stringify(data, null, 2);
-    }}
+      outputElement.textContent = "Sending request...";
+
+      try {
+        // Key change: Make request to /api/llm endpoint
+        const res = await fetch(`${ENDPOINT}/api/llm`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": API_KEY
+          },
+          // Key change: Send only the 'prompt', not the full Ollama structure
+          body: JSON.stringify({ prompt: inputElement.value })
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        // Display the LLM's response. The structure depends on what Ollama returns.
+        outputElement.textContent = data.response || JSON.stringify(data, null, 2);
+
+      } catch (error) {
+        outputElement.textContent = `Error: ${error.message}`;
+        console.error('Fetch error:', error);
+      }
+    }
   </script>
 </body>
 </html>
+
 
 
 
