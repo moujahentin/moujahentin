@@ -12,21 +12,21 @@
     const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev";
 const API_KEY = "WIN_TEST_SECRET";
 
-async function send() {
+async function go(){
   const res = await fetch(ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
       "x-api-key": API_KEY
     },
-    body: JSON.stringify({ prompt: input.value })
+    body: JSON.stringify({ prompt: q.value })
   });
-
-  out.textContent = JSON.stringify(await res.json(), null, 2);
+  o.textContent = JSON.stringify(await res.json(), null, 2);
 }
   </script>
 </body>
 </html>
+
 
 
 
