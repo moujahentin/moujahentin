@@ -4,9 +4,33 @@
   <title>LLM Page</title>
 </head>
 <body>
-  <textarea id="input"></textarea>
+  <textarea id="input" placeholder="Γράψε την ερώτησή σου…"></textarea>
   <button onclick="sendPrompt()">Send</button> <!-- Button now calls sendPrompt() -->
   <pre id="response"></pre>
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box; 
+  min-height: 120px;
+}
+
+#response {
+  white-space: pre-wrap;      /* Σπάει γραμμές */
+  word-wrap: break-word;      /* Σπάει μεγάλες λέξεις */
+  overflow-wrap: break-word;
+  max-height: 60vh;           /* Δεν ξεφεύγει στο ύψος */
+  overflow-y: auto;           /* Scroll αν χρειαστεί */
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+</style>
 
   <script>
     const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev";
@@ -15,6 +39,10 @@
     async function sendPrompt() { // Corrected function name
       const inputElement = document.getElementById('input');
       const outputElement = document.getElementById('response');
+const prompt = inputElement.value.trim();
+if (!prompt) return;
+
+inputElement.value = ""; // καθάρισε το textarea
 
       outputElement.textContent = "Sending request...";
 
@@ -27,7 +55,7 @@
             "x-api-key": API_KEY
           },
           // Key change: Send only the 'prompt', not the full Ollama structure
-          body: JSON.stringify({ prompt: inputElement.value })
+          body: JSON.stringify({ prompt })
         });
 
         if (!res.ok) {
@@ -36,13 +64,38 @@
 
         const data = await res.json();
         // Display the LLM's response. The structure depends on what Ollama returns.
-        outputElement.textContent = data.response || JSON.stringify(data, null, 2);
+        typeText(data.response || JSON.stringify(data, null, 2));
+
 
       } catch (error) {
         outputElement.textContent = `Error: ${error.message}`;
         console.error('Fetch error:', error);
       }
     }
+    const inputElement = document.getElementById("input");
+
+inputElement.addEventListener("keydown", function (e) {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();       // Μην μπει νέα γραμμή
+    sendPrompt();             // Στείλε
+  }
+});
+        function typeText(text) {
+  const outputElement = document.getElementById("response");
+  outputElement.textContent = "";
+
+  let i = 0;
+  const speed = 20;
+
+  const interval = setInterval(() => {
+    outputElement.textContent += text.charAt(i);
+    outputElement.scrollTop = outputElement.scrollHeight;
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, speed);
+}
+
+
   </script>
 </body>
 </html>
