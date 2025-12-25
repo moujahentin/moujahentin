@@ -10,22 +10,24 @@
 
   <script>
     const ENDPOINT = "https://margy-unconceptual-catabolically.ngrok-free.dev";
-const API_KEY = "WIN_TEST_SECRET";
+    async function sendPrompt(){
+      let prompt = document.getElementById("input").value;
 
-async function go(){
-  const res = await fetch(ENDPOINT, {
-    method:"POST",
-    headers:{
-      "Content-Type":"application/json",
-      "x-api-key": API_KEY
-    },
-    body: JSON.stringify({ prompt: q.value })
-  });
-  o.textContent = JSON.stringify(await res.json(), null, 2);
-}
+      let res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+      });
+
+      let data = await res.json();
+      document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+    }}
   </script>
 </body>
 </html>
+
 
 
 
