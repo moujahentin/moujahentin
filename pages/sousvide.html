@@ -254,11 +254,14 @@ body::after {
   background: linear-gradient(to top, rgba(255,91,153,0.1), rgba(255,91,153,0.8));
   transform-origin: bottom;
   animation: vu-bounce 0.9s infinite ease-in-out;
+  min-height: 4px;
 }
 
-.vu-bar:nth-child(2) { animation-delay: 0.12s; }
-.vu-bar:nth-child(3) { animation-delay: 0.24s; }
-.vu-bar:nth-child(4) { animation-delay: 0.36s; }
+.vu-bar:nth-child(1) { animation-delay: 0.1s; height: 60%; }
+.vu-bar:nth-child(2) { animation-delay: 0.2s; height: 80%; }
+.vu-bar:nth-child(3) { animation-delay: 0.3s; height: 40%; }
+.vu-bar:nth-child(4) { animation-delay: 0.4s; height: 70%; }
+/* CONTROLS */
 
 /* CONTROLS */
 .controls-row {
