@@ -35,18 +35,27 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 body {
-  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top, #191533 0%, #050509 55%, #020207 100%);
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: url('https://www.sousvideradio.com/images/background_sousvideradio_landscape.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: var(--text);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: stretch;
   padding: 20px;
+  position: relative;
 }
-
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
 /* MAIN WRAPPER */
 .app {
   position: relative;
