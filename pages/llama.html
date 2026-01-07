@@ -4,7 +4,22 @@
   <title>LLM Page</title>
 </head>
 <body>
-  <textarea id="input" placeholder="Γράψε την ερώτησή σου…"></textarea>
+  <div id="ai-description" style="
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-family: system-ui, sans-serif;
+">
+  <h2 style="margin-top: 0;">AI Code Assistant</h2>
+
+  <p>This is a local AI coding assistant running directly on my laptop. 
+  I use it to speed up development, debug issues, and experiment with ideas. 
+  You can type a question or paste some code, and it will respond like a smart programming helper.</p>
+  *if not working, probably my laptop is off :) </p>
+</div>
+  <textarea id="input" placeholder="Ask your question here…"></textarea>
   <button onclick="sendPrompt()">Send</button> <!-- Button now calls sendPrompt() -->
   <pre id="response"></pre>
 <style>
