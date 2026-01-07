@@ -47,7 +47,7 @@ GitHub Docs
 Content and code on this site are maintained by me for personal and professional use.
 
 
-
+<a href="https://roadmap.sh"><img src="https://roadmap.sh/card/tall/67423a215434bf319a7ffa03?variant=dark&roadmaps=" alt="roadmap.sh"/></a>
 <!--
 **moujahentin/moujahentin** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
