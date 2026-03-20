@@ -1,64 +1,103 @@
-🧠 Moujahentin’s Personal Site
+# Moujahentin
 
-Welcome to my personal website hosted with GitHub Pages! This site showcases my learning journey, CV, projects, contact details, and more. It’s built using static HTML/CSS and served directly from this repository. 
-Moujahentin
+## About Me
 
-📍 Live Site
+I am a self-driven technology enthusiast with a strong focus on practical problem solving, system understanding, and security-oriented thinking.
 
-🔗 https://moujahentin.github.io/moujahentin/
+My background is not limited to a single domain. I have worked across development, infrastructure, and security, building and testing real systems instead of focusing only on theory.
 
-🧩 What’s Inside
+I am currently focused on offensive security and penetration testing, combining hands-on lab work with real-world system analysis.
 
-This website includes:
+---
 
-Home — A welcome message
+## What I Do
 
-About Me — Who I am and what I do
+- Design and analyze systems from an attacker’s perspective
+- Build and test network environments in a home lab
+- Perform traffic analysis, enumeration, and service mapping
+- Identify weaknesses in authentication, architecture, and network setups
+- Develop tools and scripts for automation and analysis
 
-My CV — My résumé and experience
+---
 
-Projects — Work and experiments I’ve done
+## Technical Experience
 
-Contact — Ways to reach me
+### Cybersecurity / Offensive Security
+- Network scanning and enumeration
+- SMB/Samba analysis
+- MITM experiments (Bettercap)
+- Packet inspection and traffic analysis
+- DNS filtering and behavior analysis (AdGuard)
+- VPN networking and routing (Tailscale)
+- Local lab architecture and attack simulation
 
-IEK — Education information
+### Development
+- Python (automation, tools, backend logic)
+- REST API concepts
+- Basic frontend (HTML, CSS, JavaScript)
+- System integration and debugging
 
-LinkedIn link — Professional profile
+### Infrastructure / Systems
+- Linux environments (Kali, Ubuntu, Armbian)
+- Docker-based setups
+- Multi-service architecture understanding
+- Network configuration and troubleshooting
 
-(Content as shown on the live site) 
-Moujahentin
+---
 
-🚀 Built With
+## Projects
 
-HTML
+### Multi-Tenant SaaS Architecture (Case Study)
+Designed and structured a multi-service SaaS platform with:
+- multi-tenant architecture
+- shared authentication (JWT)
+- role-based access control
+- separation of dashboard, API and public services
 
-CSS
+Focus was on system design, integration, and security considerations.
 
-JavaScript 
+---
 
-GitHub Pages for hosting
+### Network Lab & Traffic Analysis
+Built a home lab environment including:
+- attacker machine (Kali Linux)
+- internal services (Samba server)
+- monitoring node (Armbian)
+- VPN-based access (Tailscale)
 
-GitHub Pages is a static site hosting service that publishes files directly from this repository to the web. 
-GitHub Docs
+Used for:
+- traffic inspection
+- service discovery
+- network behavior analysis
+- controlled attack simulation
 
+---
 
-📄 License
+### Packet Analysis & Automation
+Developed Python-based tools to:
+- capture and analyze network traffic
+- decode application-level communication
+- automate repetitive analysis tasks
 
-Content and code on this site are maintained by me for personal and professional use.
+---
 
+## Mindset
 
-<a href="https://roadmap.sh"><img src="https://roadmap.sh/card/tall/67423a215434bf319a7ffa03?variant=dark&roadmaps=" alt="roadmap.sh"/></a>
-<!--
-**moujahentin/moujahentin** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I prefer learning by building, breaking, and fixing systems.
 
-Here are some ideas to get you started:
+I am particularly interested in:
+- how systems fail
+- how they can be abused
+- how architecture decisions affect security
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## Current Goal
+
+To start working in offensive security / penetration testing, contributing to real-world security assessments while continuing to improve through hands-on experience.
+
+---
+
+## Contact
+
+- GitHub: https://github.com/moujahentin
